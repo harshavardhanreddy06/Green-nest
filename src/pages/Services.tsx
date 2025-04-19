@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -8,6 +7,11 @@ const Services = () => {
       title: "Hydroponic System Design",
       description: "Custom-designed hydroponic systems tailored to your specific needs. Our expert team will create the perfect setup for your space and growing goals.",
       image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9"
+    },
+    {
+      title: "Gardening Services",
+      description: "Professional gardening services including landscape design, maintenance, pruning, and organic pest control for both traditional and hydroponic gardens.",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
     },
     {
       title: "Consultation Services",
@@ -42,7 +46,7 @@ const Services = () => {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Our Services</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive hydroponic solutions tailored to your needs, from system design to ongoing support
+            Comprehensive hydroponic and gardening solutions tailored to your needs, from system design to ongoing support
           </p>
         </div>
 
