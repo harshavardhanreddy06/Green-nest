@@ -1,13 +1,15 @@
 
+import { Facebook, Instagram, Twitter } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Green Nest Agro Pet Ltd.</h3>
             <p className="text-gray-400">
-              Leading the way in hydroponic solutions for sustainable farming.
+              Leading the way in hydroponic solutions for sustainable farming. We provide cutting-edge technology and expertise for modern agriculture.
             </p>
           </div>
           <div>
@@ -25,7 +27,25 @@ const Footer = () => {
               <li>Email: info@greennest.com</li>
               <li>Phone: +1 234 567 890</li>
               <li>Address: 123 Hydro Street, Green City</li>
+              <li>Hours: Mon-Fri: 9AM-6PM</li>
             </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+            <div className="flex space-x-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <Facebook className="w-6 h-6" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
+                <Twitter className="w-6 h-6" />
+              </a>
+            </div>
+            <div className="mt-4">
+              <p className="text-gray-400">Stay connected for updates, tips, and special offers!</p>
+            </div>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">

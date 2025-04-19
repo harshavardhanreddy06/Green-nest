@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/components/ui/use-toast";
 import { useCart } from "@/hooks/useCart";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 
 interface Product {
   id: number;
@@ -11,53 +12,84 @@ interface Product {
   price: number;
   description: string;
   image: string;
+  category: string;
 }
 
 const Products = () => {
   const { addToCart } = useCart();
   
   const products: Product[] = [
+    // Hydroponic Systems
     {
       id: 1,
-      name: "Basic Hydroponic Kit",
-      price: 199.99,
-      description: "Perfect starter kit for home hydroponic gardening. Includes growing trays, nutrient solution, and pH testing kit.",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9"
+      name: "Advanced Hydroponic Growing System",
+      price: 299.99,
+      description: "Complete hydroponic system with 12 plant sites, LED grow lights, and automated nutrient delivery. Perfect for vegetables and herbs.",
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9",
+      category: "Systems"
     },
+    // Seeds
     {
       id: 2,
-      name: "Advanced Nutrient Solution",
-      price: 49.99,
-      description: "Professional-grade nutrient solution for optimal plant growth. Rich in essential minerals and vitamins.",
-      image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9"
+      name: "Premium Lettuce Seed Pack",
+      price: 12.99,
+      description: "High-yield hydroponic lettuce seeds. Contains 500 seeds of Butterhead, Romaine, and Leaf varieties.",
+      image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843",
+      category: "Seeds"
     },
+    // Nutrients
     {
       id: 3,
-      name: "LED Grow Light System",
-      price: 299.99,
-      description: "Energy-efficient LED lighting system perfect for indoor growing. Adjustable spectrum for different growth stages.",
-      image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843"
+      name: "Professional Nutrient Kit",
+      price: 79.99,
+      description: "Complete nutrient solution for all growth stages. Includes macro and micronutrients, pH balancers, and measuring tools.",
+      image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9",
+      category: "Nutrients"
     },
+    // Equipment
     {
       id: 4,
-      name: "Vertical Hydroponic Tower",
-      price: 449.99,
-      description: "Space-saving vertical hydroponic system. Perfect for growing leafy greens and herbs in limited spaces.",
-      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07"
+      name: "High-Pressure Water Pump",
+      price: 149.99,
+      description: "Energy-efficient water pump for hydroponic systems. Features adjustable flow rate and quiet operation.",
+      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+      category: "Equipment"
     },
+    // Pots
     {
       id: 5,
-      name: "pH Control Kit",
-      price: 79.99,
-      description: "Complete pH testing and adjustment kit. Includes digital pH meter and adjustment solutions.",
-      image: "https://images.unsplash.com/photo-1501854140801-50d01698950b"
+      name: "Mesh Net Pot Set",
+      price: 24.99,
+      description: "Set of 20 heavy-duty mesh pots. Perfect for hydroponics and aquaponics. Multiple sizes included.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      category: "Containers"
     },
+    // Organic Products
     {
       id: 6,
-      name: "Smart Hydroponic Controller",
-      price: 599.99,
-      description: "Automated control system for monitoring and adjusting nutrient levels, pH, and temperature.",
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+      name: "Organic Plant Growth Booster",
+      price: 34.99,
+      description: "100% organic growth stimulator. Enhances root development and overall plant health.",
+      image: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843",
+      category: "Organic"
+    },
+    // More Systems
+    {
+      id: 7,
+      name: "Vertical Hydroponic Tower",
+      price: 399.99,
+      description: "Space-saving vertical system with 24 plant sites. Ideal for small spaces and urban farming.",
+      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9",
+      category: "Systems"
+    },
+    // More Seeds
+    {
+      id: 8,
+      name: "Herb Seed Collection",
+      price: 19.99,
+      description: "Premium herb seed collection including basil, cilantro, parsley, and mint. Perfect for hydroponic herb gardens.",
+      image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9",
+      category: "Seeds"
     }
   ];
 
@@ -72,7 +104,11 @@ const Products = () => {
   return (
     <Layout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-3xl font-bold text-center mb-12">Our Products</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">Our Products</h1>
+        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Discover our comprehensive range of hydroponic equipment, nutrients, and supplies. 
+          Whether you're a beginner or professional grower, we have everything you need for successful hydroponic cultivation.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -82,6 +118,9 @@ const Products = () => {
                 className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
               />
               <div className="p-6">
+                <div className="mb-2">
+                  <span className="text-sm text-green-600 font-medium">{product.category}</span>
+                </div>
                 <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
                 <p className="text-gray-600 mb-4">{product.description}</p>
                 <div className="flex items-center justify-between">
