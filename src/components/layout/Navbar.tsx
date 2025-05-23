@@ -1,6 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
+import OptimizedImage from "../ui/OptimizedImage";
 
 const Navbar = () => {
   return (
@@ -8,10 +8,13 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-2">
-            <img 
-              src="/lovable-uploads/b605c580-5ad5-4c18-b6e2-9e4d3ef50c1e.png" 
+            <OptimizedImage 
+              src="/logo.png" 
               alt="Green Nest Agro Logo" 
               className="h-10 w-10"
+              width={40}
+              height={40}
+              priority={true}
             />
             <Link to="/" className="text-xl font-bold text-green-600">
               Green Nest Agro

@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import OptimizedImage from "../ui/OptimizedImage";
 
 const Footer = () => {
   return (
@@ -7,12 +8,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img 
-                src="/lovable-uploads/b605c580-5ad5-4c18-b6e2-9e4d3ef50c1e.png" 
+              <OptimizedImage 
+                src="/logo.png" 
                 alt="Green Nest Agro Logo" 
                 className="h-10 w-10"
+                width={40}
+                height={40}
               />
-              <h3 className="text-xl font-bold">Green Nest Agro Pet Ltd.</h3>
+              <h3 className="text-xl font-bold">Green Nest Agro pvt.Ltd</h3>
             </div>
             <p className="text-gray-400">
               Leading the way in hydroponic solutions for sustainable farming. We provide cutting-edge technology and expertise for modern agriculture.
